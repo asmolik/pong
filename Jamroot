@@ -1,0 +1,18 @@
+
+build-project Pong ;
+
+install extension
+  : Pong//pong_ext
+  : <install-dependencies>on <install-type>SHARED_LIB <install-type>PYTHON_EXTENSION  
+    <location>"./bin"
+  ;
+
+install server
+  : [ glob PongServer/server/*.py ]
+  : <location>"./bin"
+  ;
+
+install client
+  : PongClient/index.html
+  : <location>"./bin"
+  ;

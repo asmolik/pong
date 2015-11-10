@@ -1,0 +1,11 @@
+
+# Visual Studio
+*.suo
+*.user
+*.sdf
+
+# Build
+bin/
+
+# Python
+__pycache__/

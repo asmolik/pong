@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Pong</title>
+		
+		<script type="text/javascript">
+
+		function doSomethingWithTextArea(s)
+		{
+			var textArea = document.getElementById('1');
+			textArea.textContent = s;
+		}
+		
+		function connect()
+		{
+			var ws = new WebSocket("ws://localhost:8888/ws");
+			ws.onopen = function() {
+				ws.send("Hello, world");
+			};
+			ws.onmessage = function (evt) {
+				doSomethingWithTextArea(evt.data);
+			};
+		}
+
+		</script>
+	</head>
+	
+	<body>
+		<textarea rows="1" cols="80" id="1"></textarea>
+		<form action="/u" method="POST">
+			<input type="text" name="name">
+			<input type="submit" value="Submit">
+		</form>
+		<button id="conn" value="conn" onclick="connect();">connect</button>
+	</body>
+</html>
