@@ -36,15 +36,16 @@ class EchoWebSocket(tornado.websocket.WebSocketHandler):
         
     @gen.coroutine
     def open(self):
-        print("WebSocket opened")
         name = self.get_cookie('name')
+        print("WebSocket opened " + name)
         users_conn[users[name]] = self
         room.adduser(users[name])
         while True:
             for name, user in users.items():
                 data = {}
                 data[name] = room.pong.get()
-                users_conn[user].write_message(data)
+                if user in users_conn:
+                    users_conn[user].write_message(data)
             room.pong.run()
             yield gen.sleep(1)
 
@@ -54,7 +55,7 @@ class EchoWebSocket(tornado.websocket.WebSocketHandler):
     def on_close(self):
         name = self.get_cookie('name')
         del users[name]
-        print("WebSocket closed")
+        print("WebSocket closed " + name)
 
 application = tornado.web.Application([
     (r"/", MainHandler),

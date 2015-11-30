@@ -7,8 +7,7 @@
     <ProjectGuid>578b4e42-2547-40c0-8a79-2c1874d6030b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>server/server.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -17,6 +16,7 @@
     <PythonWsgiHandler>app.wsgi_app</PythonWsgiHandler>
     <Name>PongServer</Name>
     <RootNamespace>PongServer</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

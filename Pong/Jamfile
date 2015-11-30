@@ -13,7 +13,8 @@ project pong-cpp
   ;
 
 
-python-extension pong_ext : Pong.cpp PongPy.cpp
-    : <threading>multi
-    : <address-model>64
+python-extension pong_ext : [ glob-tree *.cpp ]
+    : <include>./Source
+      <threading>multi
+      <address-model>64
     ;

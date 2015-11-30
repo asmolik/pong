@@ -85,7 +85,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Programs\boost_1_55_0;D:\Programs\Python\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Source;D:\Programs\boost_1_55_0;D:\Programs\Python\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -123,10 +123,42 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Pong.h" />
+    <ClInclude Include="Source\Component\PositionComponent.h" />
+    <ClInclude Include="Source\Game\Game.h" />
+    <ClInclude Include="Source\Input\CommandVisitor.h" />
+    <ClInclude Include="Source\Input\CommandVisitorInput.h" />
+    <ClInclude Include="Source\Input\RawInputVisitorCommand.cpp" />
+    <ClInclude Include="Source\Input\RawInputVisitorCommand.h" />
+    <ClInclude Include="Source\Input\InputCommand.h" />
+    <ClInclude Include="Source\Input\InputCommandFactory.h" />
+    <ClInclude Include="Source\Input\InputContext.h" />
+    <ClInclude Include="Source\Input\RawInput.h" />
+    <ClInclude Include="Source\Input\RawInputVisitor.h" />
+    <ClInclude Include="Source\Object\Ball.h" />
+    <ClInclude Include="Source\Object\GameObject.h" />
+    <ClInclude Include="Source\Object\Paddle.h" />
+    <ClInclude Include="Source\Physics\Vec2.h" />
+    <ClInclude Include="Source\System\InputSystem.h" />
+    <ClInclude Include="Source\System\PhysicsSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pong.cpp" />
     <ClCompile Include="PongPy.cpp" />
+    <ClCompile Include="Source\Component\PositionComponent.cpp" />
+    <ClCompile Include="Source\Game\Game.cpp" />
+    <ClCompile Include="Source\Input\CommandVisitor.cpp" />
+    <ClCompile Include="Source\Input\CommandVisitorInput.cpp" />
+    <ClCompile Include="Source\Input\InputCommand.cpp" />
+    <ClCompile Include="Source\Input\InputCommandFactory.cpp" />
+    <ClCompile Include="Source\Input\InputContext.cpp" />
+    <ClCompile Include="Source\Input\RawInput.cpp" />
+    <ClCompile Include="Source\Input\RawInputVisitor.cpp" />
+    <ClCompile Include="Source\Object\Ball.cpp" />
+    <ClCompile Include="Source\Object\GameObject.cpp" />
+    <ClCompile Include="Source\Object\Paddle.cpp" />
+    <ClCompile Include="Source\Physics\Vec2.cpp" />
+    <ClCompile Include="Source\System\InputSystem.cpp" />
+    <ClCompile Include="Source\System\PhysicsSystem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

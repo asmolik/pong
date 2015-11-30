@@ -1,13 +1,14 @@
 #include "Pong.h"
 
 Pong::Pong(int x) {
-	this->x = x;
+    this->x = x;
 }
 
 int Pong::get() {
-	return x;
+    return pong.get();
 }
 
 void Pong::run() {
-	++x;
+    pong.tick(1.0f);
+    ++x;
 }
