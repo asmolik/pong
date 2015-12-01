@@ -7,5 +7,5 @@ notfile run-tests : @tests ;
 actions tests
 {
 	echo "Running python tests."
-    python -m unittest discover
+    (cd PongServer && python -m unittest discover)
 }
