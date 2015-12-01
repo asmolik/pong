@@ -127,6 +127,7 @@
   <ItemGroup>
     <ClCompile Include="Pong.cpp" />
     <ClCompile Include="PongPy.cpp" />
+    <ClCompile Include="Tests\Pong_Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -39,57 +39,6 @@
     <ClInclude Include="Pong.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Input\InputContext.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\InputCommand.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\Game.h">
-      <Filter>Source Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInput.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\InputCommandFactory.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInputVisitor.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInputVisitorCommand.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInputVisitorCommand.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\CommandVisitor.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\CommandVisitorInput.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Object\GameObject.h">
-      <Filter>Source Files\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Component\PositionComponent.h">
-      <Filter>Source Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Physics\Vec2.h">
-      <Filter>Source Files\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Object\Ball.h">
-      <Filter>Source Files\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Object\Paddle.h">
-      <Filter>Source Files\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\System\InputSystem.h">
-      <Filter>Source Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\System\PhysicsSystem.h">
-      <Filter>Source Files\System</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pong.cpp">
@@ -98,50 +47,8 @@
     <ClCompile Include="PongPy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Input\InputContext.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\InputCommand.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Game\Game.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\RawInput.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\InputCommandFactory.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\RawInputVisitor.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\CommandVisitor.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\CommandVisitorInput.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\GameObject.cpp">
-      <Filter>Source Files\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Component\PositionComponent.cpp">
-      <Filter>Source Files\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Physics\Vec2.cpp">
-      <Filter>Source Files\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Ball.cpp">
-      <Filter>Source Files\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\Paddle.cpp">
-      <Filter>Source Files\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\System\InputSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\System\PhysicsSystem.cpp">
-      <Filter>Source Files\System</Filter>
+    <ClCompile Include="Tests\Pong_Test.cpp">
+      <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

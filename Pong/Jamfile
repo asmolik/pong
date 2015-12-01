@@ -12,4 +12,4 @@ python-extension pong_ext : Pong.cpp PongPy.cpp
       <address-model>64
     ;
 
-unit-test pong-test : Tests/Pong_Test.cpp ;
+unit-test pong-test : Tests/Pong_Test.cpp Pong.cpp ;

@@ -1,0 +1,11 @@
+
+import notfile ;
+
+project pong-server ;
+
+notfile run-tests : @tests ;
+actions tests
+{
+	echo "Running python tests."
+    python -m unittest discover
+}
