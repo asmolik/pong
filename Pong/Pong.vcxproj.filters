@@ -31,6 +31,12 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{f997527c-999c-4357-8d04-bcfeebf509fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Shape">
+      <UniqueIdentifier>{d6270e0a-e104-4831-a8a1-22628973804a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Collision">
+      <UniqueIdentifier>{65fb32e5-f6be-460e-9a47-55c88e80d0f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pong.h">
@@ -87,6 +93,42 @@
     <ClInclude Include="Source\System\PhysicsSystem.h">
       <Filter>Source Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="Source\System\CollisionSystem.h">
+      <Filter>Source Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\CollisionShape.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\ShapeVisitor.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\CollisionVisitor.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\Circle.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\Rectangle.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\CircleVisitor.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\RectangleVisitor.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collision\RectangleCircle.h">
+      <Filter>Source Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collision\Contact.h">
+      <Filter>Source Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\Line.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collision\CircleLine.h">
+      <Filter>Source Files\Collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pong.cpp">
@@ -139,6 +181,42 @@
     </ClCompile>
     <ClCompile Include="Source\System\PhysicsSystem.cpp">
       <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\CollisionSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\CollisionShape.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\ShapeVisitor.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\CollisionVisitor.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\Circle.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\Rectangle.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\CircleVisitor.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\RectangleVisitor.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collision\RectangleCircle.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collision\Contact.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\Line.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collision\CircleLine.cpp">
+      <Filter>Source Files\Collision</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

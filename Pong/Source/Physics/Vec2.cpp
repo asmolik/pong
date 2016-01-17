@@ -12,10 +12,36 @@ Vec2 Vec2::operator*(const float n)
     return ret;
 }
 
+Vec2 Vec2::operator-()
+{
+    Vec2 ret(*this);
+    ret.x = -ret.x;
+    ret.y = -ret.y;
+    return ret;
+}
+
+Vec2 Vec2::operator-(const Vec2& v)
+{
+    Vec2 ret(*this);
+    ret.x -= v.x;
+    ret.y -= v.y;
+    return ret;
+}
+
 Vec2& Vec2::operator+=(const Vec2& v)
 {
     x += v.x;
     y += v.y;
     return *this;
+}
+
+float Vec2::len()
+{
+    return sqrt(len2());
+}
+
+float Vec2::len2()
+{
+    return x*x + y*y;
 }
 }

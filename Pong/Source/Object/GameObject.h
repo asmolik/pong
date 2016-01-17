@@ -10,7 +10,7 @@ class GameObject
     
 public:
     GameObject();
-    GameObject(std::shared_ptr<PositionComponent>& position);
+    GameObject(const PositionComponent& position);
     virtual ~GameObject();
     std::shared_ptr<PositionComponent> position;
 };

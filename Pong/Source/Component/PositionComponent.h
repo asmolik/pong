@@ -8,6 +8,9 @@ namespace PongGame
 {
 struct PositionComponent
 {
+    PositionComponent();
+    PositionComponent(Vec2& position);
+
     Vec2 position;
     Vec2 velocity;
 };

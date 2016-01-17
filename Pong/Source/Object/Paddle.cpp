@@ -2,7 +2,7 @@
 
 namespace PongGame
 {
-Paddle::Paddle() {}
+Paddle::Paddle() : shape(std::make_shared<Rectangle>(this->position)) {}
 
 Paddle::~Paddle() {}
 }
