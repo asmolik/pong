@@ -1,5 +1,11 @@
 
+project : requirements <address-model>64 ;
+
+use-project boost
+  : D:/Programs/boost_1_55_0/ ;
+
 build-project Pong ;
+build-project PongServer ;
 
 install extension
   : Pong//pong_ext

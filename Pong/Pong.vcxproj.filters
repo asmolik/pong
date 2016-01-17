@@ -36,6 +36,8 @@
     </Filter>
     <Filter Include="Source Files\Collision">
       <UniqueIdentifier>{65fb32e5-f6be-460e-9a47-55c88e80d0f6}</UniqueIdentifier>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{e9323544-8c41-4700-9c9c-4c630ec4a5c6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +219,8 @@
     </ClCompile>
     <ClCompile Include="Source\Collision\CircleLine.cpp">
       <Filter>Source Files\Collision</Filter>
+    <ClCompile Include="Tests\Pong_Test.cpp">
+      <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

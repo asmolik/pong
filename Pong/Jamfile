@@ -1,20 +1,16 @@
 
 import python ;
 
-
-use-project boost
-  : D:/Programs/boost_1_55_0/ ;
-
-
 project pong-cpp
   : requirements <library>/boost/python//boost_python 
                  <implicit-dependency>/boost//headers 
   : usage-requirements <implicit-dependency>/boost//headers 
   ;
 
-
 python-extension pong_ext : [ glob-tree *.cpp ]
     : <include>./Source
       <threading>multi
       <address-model>64
     ;
+
+unit-test pong-test : Tests/Pong_Test.cpp Pong.cpp ;

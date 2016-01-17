@@ -183,6 +183,7 @@
     <ClCompile Include="Source\System\CollisionSystem.cpp" />
     <ClCompile Include="Source\System\InputSystem.cpp" />
     <ClCompile Include="Source\System\PhysicsSystem.cpp" />
+    <ClCompile Include="Tests\Pong_Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
