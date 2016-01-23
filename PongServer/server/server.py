@@ -21,7 +21,7 @@ p2input = 0.0
 
 # runs game in room
 def runGame():
-    while True:
+    while room.running:
         global p1input
         global p2input
         room.input(p1input, p2input)
@@ -102,12 +102,14 @@ class EchoWebSocket(tornado.websocket.WebSocketHandler):
     def on_message(self, message):
         data = json.loads(message)
         if "start" in data:
-            room.setWidth(data["width"])
-            room.setHeight(data["height"])
-            print(data["vely"])
-            room.setBallVelocity(data["velx"], data["vely"])
-            roomThread = Thread(target = runGame)
-            roomThread.start()
+            if not room.running:
+                room.running = True
+                room.setWidth(data["width"])
+                room.setHeight(data["height"])
+                print(data["vely"])
+                room.setBallVelocity(data["velx"], data["vely"])
+                roomThread = Thread(target = runGame)
+                roomThread.start()
         else:
             global p1input
             global p2input

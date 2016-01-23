@@ -26,8 +26,8 @@ Game::Game(const GameInfo& info)
     ball.position->position.y = info.fieldHeight / 2;
     ball.behavior = std::make_unique<CollisionBehavior>(ball);
 
-    paddle1.position->position.x = 25.0f;
-    paddle2.position->position.x = info.fieldWidth - 25.0f;
+    paddle1.position->position.x = 50.0f;
+    paddle2.position->position.x = info.fieldWidth - 50.0f;
     paddle1.position->position.y = info.fieldHeight / 2;
     paddle2.position->position.y = info.fieldHeight / 2;
 
@@ -63,7 +63,7 @@ void Game::setWidth(float width)
 {
     info.fieldWidth = width;
     right->position.position.x = width;
-    paddle2.position->position.x = width - 25.0f;
+    paddle2.position->position.x = width - 50.0f;
 }
 
 void Game::setHeight(float height)

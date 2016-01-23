@@ -16,6 +16,7 @@ class UserEncoder(JSONEncoder):
 class Room(object):
     def __init__(self, id):
         self.id = id
+        self.running = False
         self.p1score = 0
         self.p2score = 0
         self.user1 = None

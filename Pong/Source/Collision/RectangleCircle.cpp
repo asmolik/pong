@@ -33,7 +33,9 @@ std::unique_ptr<Contact> intersect(Rectangle& r, Circle& c)
     if (collisionPoint.y < rectPos.y + r.b / 2 &&
         collisionPoint.y > rectPos.y - r.b / 2)
     {
-        return std::make_unique<Contact>(r.object, c.object, r.normal, toi);
+        Vec2 normal = r.normal;
+        normal.y = (collisionPoint.y - rectPos.y) / r.b;
+        return std::make_unique<Contact>(r.object, c.object, Vec2::normalize(normal), toi);
     }
     return nullptr;
 }
