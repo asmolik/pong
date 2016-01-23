@@ -7,10 +7,18 @@ project pong-cpp
   : usage-requirements <implicit-dependency>/boost//headers 
   ;
 
-python-extension pong_ext : [ glob-tree *.cpp ]
+lib pong_lib : [ glob-tree *.cpp : *Test* ]
     : <include>./Source
       <threading>multi
       <address-model>64
     ;
 
-unit-test pong-test : Tests/Pong_Test.cpp Pong.cpp ;
+python-extension pong_ext : [ glob-tree *.cpp : *Test* ]
+    : <include>./Source
+      <threading>multi
+      <address-model>64
+    ;
+
+unit-test pong-test : Tests/CollisionSystemTest.cpp [ glob-tree *.cpp : PongPy.cpp *Test* ]
+    : <include>./Source
+    ;

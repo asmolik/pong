@@ -2,7 +2,7 @@
 
 namespace PongGame
 {
-Ball::Ball() : shape(std::make_shared<Circle>(this->position)) {}
+Ball::Ball(float radius) : shape(std::make_shared<Circle>(*this, radius)) {}
 
 Ball::~Ball() {}
 }

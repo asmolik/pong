@@ -2,30 +2,37 @@
 
 namespace PongGame
 {
-InputSystem::InputSystem() 
+InputSystem::InputSystem() {}
+
+void InputSystem::setInput(std::vector<Input>& in)
 {
-    commands.reserve(1024);
+    inputs = in;
+}
+
+void InputSystem::setInput(std::vector<InputRange>& in)
+{
+    ranges = in;
 }
 
 void InputSystem::update()
 {
-    commands.clear();
     for (auto& context : contexts)
     {
-        auto c = context->mapInput(inputs);
-        commands.insert(commands.end(), 
-            std::make_move_iterator(c.begin()), 
-            std::make_move_iterator(c.end()));
+        auto commands = context->mapInput(inputs);
+        for (auto& c : commands)
+        {
+            c.get().execute();
+        }
+        auto rangeCommands = context->mapInput(ranges);
+        for (auto& c : rangeCommands)
+        {
+            c.get().execute();
+        }
     }
 }
 
 void InputSystem::addContext(std::unique_ptr<InputContext> context)
 {
     contexts.push_back(std::move(context));
-}
-
-const std::vector<InputCommandP>& InputSystem::currentCommands()
-{
-    return commands;
 }
 }

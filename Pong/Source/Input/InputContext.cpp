@@ -2,25 +2,46 @@
 
 namespace PongGame
 {
-    InputContext::InputContext(std::unique_ptr<InputCommandFactory> factory)
-        : factory(move(factory)) {}
+InputContext::InputContext() {}
 
-    InputContext::~InputContext() {}
+InputContext::~InputContext() {}
 
-    std::vector<InputCommandP> InputContext::mapInput(
-        std::vector<RawInputP>& input)
+std::vector<std::reference_wrapper<Command>> InputContext::mapInput(
+    std::vector<Input>& inputs)
+{
+    std::vector<std::reference_wrapper<Command>> commands;
+    for (auto& key : inputs)
     {
-        std::vector<std::shared_ptr<InputCommand>> commands;
-        for (auto& key : input)
+        for (auto it = inputMap.find(key); it == inputMap.end() || it->first != key; ++it)
         {
-            auto command = inputMap[key];
-            commands.push_back(factory->create(*key, command));
+            commands.push_back(*it->second);
         }
-        return commands;
     }
+    return commands;
+}
 
-    void InputContext::addMapping(RawInputP ri, InputCommandP ic)
+std::vector<std::reference_wrapper<RangeCommand>> InputContext::mapInput(
+    std::vector<InputRange>& rangeInputs)
+{
+    std::vector<std::reference_wrapper<RangeCommand>> commands;
+    for (auto& key : rangeInputs)
     {
-        inputMap[ri] = ic;
+        for (auto it = rangeMap.find(key); it != rangeMap.end() && it->first == key; ++it)
+        {
+            it->second->set(key.get());
+            commands.push_back(*(it->second));
+        }
     }
+    return commands;
+}
+
+void InputContext::addMapping(Input in, std::unique_ptr<Command> c)
+{
+    inputMap.insert(std::make_pair(in, std::move(c)));
+}
+
+void InputContext::addMapping(InputRange in, std::unique_ptr<RangeCommand> c)
+{
+    rangeMap.insert(std::make_pair(in, std::move(c)));
+}
 }

@@ -19,6 +19,11 @@ install server
   ;
 
 install client
-  : PongClient/index.html
+  : [ glob PongClient/*.html ]
   : <location>"./bin"
+  ;
+
+install client-static
+  : [ glob PongClient/*.css PongClient/*.js ]
+  : <location>"./bin/static"
   ;

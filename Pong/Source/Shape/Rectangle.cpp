@@ -2,8 +2,8 @@
 
 namespace PongGame
 {
-Rectangle::Rectangle(PositionComponent& p, float a, float b)
-    : CollisionShape(p), a(a), b(b) {}
+Rectangle::Rectangle(GameObject& o, float a, float b, Vec2& n)
+    : CollisionShape(o), a(a), b(b), normal(n) {}
 
 Rectangle::~Rectangle() {}
 

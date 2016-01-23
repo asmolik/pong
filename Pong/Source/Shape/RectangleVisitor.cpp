@@ -1,20 +1,28 @@
-#include "CollisionVisitor.h"
+#include "RectangleVisitor.h"
 
 namespace PongGame
 {
-CollisionVisitor::CollisionVisitor(CollisionShape& s) : shape(s), value() {}
+RectangleVisitor::RectangleVisitor(Rectangle& s) : shape(s) {}
 
-CollisionVisitor::~CollisionVisitor() {}
+RectangleVisitor::~RectangleVisitor() {}
 
-void CollisionVisitor::visit(Circle& circle)
+void RectangleVisitor::visit(Circle& circle)
 {
-    CircleVisitor visitor(circle);
-    shape.accept(visitor);
-    value = visitor.get();
+    value = Collision::intersect(this->shape, circle);
 }
 
-void CollisionVisitor::visit(Rectangle& shape)
+void RectangleVisitor::visit(Line& shape)
 {
 
+}
+
+void RectangleVisitor::visit(Rectangle& shape)
+{
+
+}
+
+std::unique_ptr<Contact> RectangleVisitor::get()
+{
+    return std::move(value);
 }
 }

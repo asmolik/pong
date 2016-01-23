@@ -2,6 +2,6 @@
 
 namespace PongGame
 {
-CollisionShape::CollisionShape(PositionComponent& p) : position(p) {}
+CollisionShape::CollisionShape(GameObject& o) : object(o), position(*o.position) {}
 CollisionShape::~CollisionShape() {}
 }

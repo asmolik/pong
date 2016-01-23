@@ -7,7 +7,7 @@
 namespace PongGame
 {
 ///
-/// Simulates game's physics.
+/// Simulates game's physics. Integrates velocities and forces.
 ///
 class PhysicsSystem
 {

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include <memory>
 #include "Physics/Vec2.h"
 
@@ -13,5 +12,7 @@ struct PositionComponent
 
     Vec2 position;
     Vec2 velocity;
+
+    void apply(const Vec2& impulse);
 };
 }

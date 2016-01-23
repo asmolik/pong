@@ -11,13 +11,18 @@ void CircleVisitor::visit(Circle& circle)
     
 }
 
-void CircleVisitor::visit(Line& shape)
+void CircleVisitor::visit(Line& line)
 {
-    Collision::intersect(this->shape, shape);
+    value = Collision::intersect(this->shape, line);
 }
 
-void CircleVisitor::visit(Rectangle& shape)
+void CircleVisitor::visit(Rectangle& rect)
 {
-    Collision::intersect(shape, this->shape);
+    value = Collision::intersect(rect, this->shape);
+}
+
+std::unique_ptr<Contact> CircleVisitor::get()
+{
+    return std::move(value);
 }
 }

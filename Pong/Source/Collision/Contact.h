@@ -5,22 +5,23 @@
 
 namespace PongGame
 {
-class CollisionShape;
+class GameObject;
 
+// Class representig a contact point in a collision between two objects.
 class Contact
 {
 public:
-    Contact(CollisionShape& shape1, CollisionShape& shape2, Vec2 normal, float impulse);
+    Contact(GameObject& object1, GameObject& object2, Vec2 normal, float timeOfImpact);
 
-    CollisionShape& shape1;
-    CollisionShape& shape2;
+    GameObject& object1;
+    GameObject& object2;
 
-    // Points to shape2
+    // Points to object2
     Vec2 normal;
 
     Vec2 point1;
     Vec2 point2;
 
-    float impulse;
+    float timeOfImpact;
 };
 }

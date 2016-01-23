@@ -3,40 +3,39 @@
 #include <map>
 #include <vector>
 #include <memory>
-#include "RawInput.h"
-#include "InputCommand.h"
-#include "InputCommandFactory.h"
+#include "Input.h"
+#include "InputRange.h"
+#include "Command.h"
+#include "RangeCommand.h"
 
 namespace PongGame
 {
-typedef std::shared_ptr<RawInput> RawInputP;
-typedef std::shared_ptr<InputCommand> InputCommandP;
-
 ///
-/// Provides a mapping of RawInputs to game commands.
-/// Uses a factory to manage creation of the commands.
+/// Provides a mapping of Inputs to Commands.
 ///
 class InputContext
 {
-    struct PointedCompare
-    {
-        bool operator() (const RawInputP& l, const RawInputP& r)
-        {
-            return *l < *r;
-        }
-    };
 protected:
-    std::map<RawInputP, InputCommandP, PointedCompare> inputMap;
-    std::unique_ptr<InputCommandFactory> factory;
+    std::multimap<Input, std::unique_ptr<Command>> inputMap;
+    std::multimap<InputRange, std::unique_ptr<RangeCommand>> rangeMap;
 
 public:
-    InputContext(std::unique_ptr<InputCommandFactory> factory);
+    InputContext();
     virtual ~InputContext();
     ///
-    /// Maps raw inputs to game's commands.
+    /// Maps inputs to game's commands. Can remove inputs from the vector
+    /// if they are not supposed to be used in other contexts.
     ///
-    virtual std::vector<InputCommandP> mapInput(std::vector<RawInputP>& input);
+    virtual std::vector<std::reference_wrapper<Command>> mapInput(
+        std::vector<Input>& inputs);
+    ///
+    /// Maps ranges to game's commands. Can remove inputs from the vector
+    /// if they are not supposed to be used in other contexts.
+    ///
+    virtual std::vector<std::reference_wrapper<RangeCommand>> mapInput(
+        std::vector<InputRange>& rangeInputs);
 
-    virtual void addMapping(RawInputP input, InputCommandP command);
+    virtual void addMapping(Input input, std::unique_ptr<Command> command);
+    virtual void addMapping(InputRange input, std::unique_ptr<RangeCommand> command);
 };
 }

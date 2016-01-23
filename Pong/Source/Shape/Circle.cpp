@@ -2,7 +2,7 @@
 
 namespace PongGame
 {
-Circle::Circle(PositionComponent& p, float r) : CollisionShape(p), radius(r) {}
+Circle::Circle(GameObject& o, float r) : CollisionShape(o), radius(r) {}
 
 Circle::~Circle() {}
 

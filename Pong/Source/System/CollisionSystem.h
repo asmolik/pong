@@ -10,7 +10,7 @@
 namespace PongGame
 {
 ///
-/// Simulates game's physics.
+/// Detects collisions, solves them and notifies objects about them.
 ///
 class CollisionSystem
 {
@@ -23,5 +23,8 @@ public:
     void update();
     void addObject(std::shared_ptr<CollisionShape> object);
     void setTime(float time);
+
+private:
+    Vec2 calculateImpulse(const Contact& c);
 };
 }

@@ -9,7 +9,9 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         a = User('a')
         b = User('b')
-        self.room = Room(1, a, b)
+        self.room = Room(1)
+        self.room.adduser(a)
+        self.room.adduser(b)
         self.room.pong.get = MagicMock()
         self.room.pong.run = MagicMock()
 

@@ -9,17 +9,11 @@ PhysicsSystem::PhysicsSystem()
 
 void PhysicsSystem::update()
 {
-    // find collisions
-
-    // solve collisions
-
     // integrate velocities
     for (auto& obj : objects)
     {
         obj->position += obj->velocity * time;
     }
-
-    // integrate forces
 }
 
 void PhysicsSystem::addObject(

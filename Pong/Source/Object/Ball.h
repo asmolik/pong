@@ -9,7 +9,7 @@ namespace PongGame
 class Ball : public GameObject
 {
 public:
-    Ball();
+    Ball(float radius);
     virtual ~Ball();
     std::shared_ptr<CollisionShape> shape;
 };

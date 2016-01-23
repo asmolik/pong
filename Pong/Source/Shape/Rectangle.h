@@ -9,9 +9,10 @@ class Rectangle : public CollisionShape
 {
 public:
     float a, b;
+    Vec2 normal;
 
-    Rectangle(PositionComponent& position, float a, float b);
+    Rectangle(GameObject& object, float a, float b, Vec2& normal);
     virtual ~Rectangle();
-    virtual void accept(ShapeVisitor& v) = 0;
+    virtual void accept(ShapeVisitor& v);
 };
 }

@@ -36,6 +36,7 @@
     </Filter>
     <Filter Include="Source Files\Collision">
       <UniqueIdentifier>{65fb32e5-f6be-460e-9a47-55c88e80d0f6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Tests">
       <UniqueIdentifier>{e9323544-8c41-4700-9c9c-4c630ec4a5c6}</UniqueIdentifier>
     </Filter>
@@ -47,32 +48,8 @@
     <ClInclude Include="Source\Input\InputContext.h">
       <Filter>Source Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Input\InputCommand.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Game\Game.h">
       <Filter>Source Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInput.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\InputCommandFactory.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInputVisitor.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInputVisitorCommand.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\RawInputVisitorCommand.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\CommandVisitor.h">
-      <Filter>Source Files\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Input\CommandVisitorInput.h">
-      <Filter>Source Files\Input</Filter>
     </ClInclude>
     <ClInclude Include="Source\Object\GameObject.h">
       <Filter>Source Files\Object</Filter>
@@ -116,9 +93,6 @@
     <ClInclude Include="Source\Shape\CircleVisitor.h">
       <Filter>Source Files\Shape</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Shape\RectangleVisitor.h">
-      <Filter>Source Files\Shape</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Collision\RectangleCircle.h">
       <Filter>Source Files\Collision</Filter>
     </ClInclude>
@@ -131,37 +105,52 @@
     <ClInclude Include="Source\Collision\CircleLine.h">
       <Filter>Source Files\Collision</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Shape\LineVisitor.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\Constants.h">
+      <Filter>Source Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Component\Behavior.h">
+      <Filter>Source Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Component\CollisionBehavior.h">
+      <Filter>Source Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameInfo.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Component\AddPoint.h">
+      <Filter>Source Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shape\RectangleVisitor.h">
+      <Filter>Source Files\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Component\InputComponent.h">
+      <Filter>Source Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Input\Command.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Input\Input.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Input\InputRange.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Input\RangeCommand.h">
+      <Filter>Source Files\Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pong.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PongPy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Input\InputContext.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\InputCommand.cpp">
       <Filter>Source Files\Input</Filter>
     </ClCompile>
     <ClCompile Include="Source\Game\Game.cpp">
       <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\RawInput.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\InputCommandFactory.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\RawInputVisitor.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\CommandVisitor.cpp">
-      <Filter>Source Files\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Input\CommandVisitorInput.cpp">
-      <Filter>Source Files\Input</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\GameObject.cpp">
       <Filter>Source Files\Object</Filter>
@@ -205,9 +194,6 @@
     <ClCompile Include="Source\Shape\CircleVisitor.cpp">
       <Filter>Source Files\Shape</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Shape\RectangleVisitor.cpp">
-      <Filter>Source Files\Shape</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Collision\RectangleCircle.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
@@ -219,8 +205,51 @@
     </ClCompile>
     <ClCompile Include="Source\Collision\CircleLine.cpp">
       <Filter>Source Files\Collision</Filter>
+    </ClCompile>
     <ClCompile Include="Tests\Pong_Test.cpp">
       <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\CollisionSystemTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="PongPy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\Pong_Test-VS.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\LineVisitor.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Component\CollisionBehavior.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Component\Behavior.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameInfo.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Component\AddPoint.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shape\RectangleVisitor.cpp">
+      <Filter>Source Files\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Component\InputComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\Command.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\Input.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\InputRange.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Input\RangeCommand.cpp">
+      <Filter>Source Files\Input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

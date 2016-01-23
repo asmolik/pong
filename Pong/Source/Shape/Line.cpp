@@ -2,7 +2,7 @@
 
 namespace PongGame
 {
-Line::Line(PositionComponent& p, Vec2 n) : CollisionShape(p), normal(n) {}
+Line::Line(GameObject& o, Vec2& n) : CollisionShape(o), normal(n) {}
 
 Line::~Line() {}
 

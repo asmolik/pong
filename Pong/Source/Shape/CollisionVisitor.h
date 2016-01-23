@@ -5,6 +5,7 @@
 #include "ShapeVisitor.h"
 #include "CollisionShape.h"
 #include "CircleVisitor.h"
+#include "LineVisitor.h"
 #include "RectangleVisitor.h"
 
 namespace PongGame
@@ -22,6 +23,7 @@ public:
     virtual void visit(Circle& shape);
     virtual void visit(Line& shape);
     virtual void visit(Rectangle& shape);
-    virtual std::unique_ptr<Contact> get();
+
+    std::unique_ptr<Contact> get();
 };
 }
