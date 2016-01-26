@@ -44,6 +44,18 @@ class Room(object):
         else:
             self.users.add(user)
 
+    def removeUser(self, user):
+        if self.user1 == user:
+            self.user1 = None
+            if len(self.users):
+                self.user1 = self.users.pop()
+        elif self.user2 == user:
+            self.user2 = None
+            if len(self.users):
+                self.user2 = self.users.pop()
+        elif user in users:
+           self.users.remove(user)
+
     def input(self, p1, p2):
         self.pong.p1input(p1)
         self.pong.p2input(p2)

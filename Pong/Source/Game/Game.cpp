@@ -5,9 +5,13 @@ namespace PongGame
 Game::Game() : Game(GameInfo()) {}
 
 Game::Game(const GameInfo& info)
-    : paddle1(info.paddle1Length, Vec2(1.0f, 0.0)), paddle2(info.paddle2Length, Vec2(-1.0f, 0.0)),
-    ball(info.ballSize), info(info), lineLeft(GameObject("left")), lineRight(GameObject("right")),
+    : ball(info.ballSize), 
+    paddle1(info.paddle1Length, Vec2(1.0f, 0.0)), 
+    paddle2(info.paddle2Length, Vec2(-1.0f, 0.0)), 
+    info(info), 
+    lineLeft(GameObject("left")),
     left(std::make_shared<Line>(lineLeft, Vec2(1.0f, 0.0f))),
+    lineRight(GameObject("right")),
     right(std::make_shared<Line>(lineRight, Vec2(-1.0f, 0.0f))),
     top(std::make_shared<Line>(lineTop, Vec2(0.0f, -1.0f))),
     bottom(std::make_shared<Line>(lineBottom, Vec2(0.0f, 1.0f)))
@@ -54,7 +58,7 @@ Game::Game(const GameInfo& info)
     ball.position->velocity = Vec2(2.0f, 0.0f);
 }
 
-Game::Game(const Game&) : paddle1(10.0f, Vec2(1.0f, 0.0)), paddle2(10.0f, Vec2(-1.0f, 0.0)), ball(5.0f)
+Game::Game(const Game&) : ball(5.0f), paddle1(10.0f, Vec2(1.0f, 0.0)), paddle2(10.0f, Vec2(-1.0f, 0.0))
 {
 
 }

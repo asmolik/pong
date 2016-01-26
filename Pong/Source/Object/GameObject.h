@@ -19,6 +19,7 @@ public:
     explicit GameObject(const std::string& name);
     explicit GameObject(const PositionComponentP& position);
     GameObject(const std::string& name, const PositionComponentP& position);
+    GameObject(const GameObject& other);
     virtual ~GameObject();
 };
 }

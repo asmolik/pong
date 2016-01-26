@@ -13,8 +13,8 @@ webSocket.onmessage = function(msg) {
     $("#ball").css({ "left": data.ballPosx - 10, "top": data.ballPosy - 10 });
     $("#paddleA").css("top", data.paddleAPosy - 45);
     $("#paddleB").css("top", data.paddleBPosy - 45);
-    $("#paddleA").css("left", data.paddleAPosx - 5);
-    $("#paddleB").css("left", data.paddleBPosx - 5);
+    $("#paddleA").css("left", data.paddleAPosx - 50);
+    $("#paddleB").css("left", data.paddleBPosx);
 }
 var sendMessage = function() {
     var msg = {"up": false, "down": false};

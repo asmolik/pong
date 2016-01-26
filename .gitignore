@@ -4,6 +4,11 @@
 *.user
 *.sdf
 *.opensdf
+*.idb
+*.ilk
+*.pdb
+*.log
+*.tlog
 
 
 # Build

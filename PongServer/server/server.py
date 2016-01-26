@@ -51,8 +51,12 @@ def createMsg(info):
 # broadcasts game information to players
 def broadcast(info):
     for user, conn in users_conn.items():
-        conn.write_message(info)
+        try:
+            conn.write_message(info)
+        except Exception:
+            print("exception while broadcasting")
 
+# chekcs score and resets te ball if it chaged
 def checkScore():
     info = room.get()
     if room.p1score != info.p1score:
@@ -128,6 +132,8 @@ class EchoWebSocket(tornado.websocket.WebSocketHandler):
 
     def on_close(self):
         name = self.get_cookie('name')
+        room.removeUser(users[name])
+        del users_conn[users[name]]
         del users[name]
         print("WebSocket closed " + name)
 

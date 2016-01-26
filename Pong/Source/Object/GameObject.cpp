@@ -14,5 +14,8 @@ GameObject::GameObject(const PositionComponentP& position)
 GameObject::GameObject(const std::string& n, const PositionComponentP& position)
     : name(n), position(position), behavior(std::make_unique<Behavior>()) {}
 
+GameObject::GameObject(const GameObject& other)
+    : GameObject(other.name, std::make_shared<PositionComponent>()) {}
+
 GameObject::~GameObject() {}
 }

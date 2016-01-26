@@ -9,7 +9,7 @@ namespace PongGame
 class Paddle : public GameObject
 {
 public:
-    Paddle(float length, Vec2& normal);
+    Paddle(float length, const Vec2& normal);
     virtual ~Paddle();
     std::shared_ptr<CollisionShape> shape;
 };

@@ -50,7 +50,7 @@ Vec2 Vec2::operator+(const Vec2& v)
 
 float Vec2::len() const
 {
-    return sqrt(len2());
+    return std::sqrt(len2());
 }
 
 float Vec2::len2() const

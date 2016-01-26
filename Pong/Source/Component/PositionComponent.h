@@ -9,6 +9,7 @@ struct PositionComponent
 {
     PositionComponent();
     PositionComponent(Vec2& position);
+    PositionComponent(PositionComponent& other);
 
     Vec2 position;
     Vec2 velocity;
