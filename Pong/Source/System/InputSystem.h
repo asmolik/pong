@@ -6,9 +6,9 @@
 
 namespace PongGame
 {
-///
-/// Maps input to commands using contexts and then executes the commands.
-///
+//
+// Maps input to commands using contexts and then executes the commands.
+//
 class InputSystem
 {
     std::vector<Input> inputs;

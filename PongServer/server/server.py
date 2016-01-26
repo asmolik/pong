@@ -5,16 +5,20 @@ import json
 import uuid
 from users import User, UserEncoder, Room
 import concurrent
-from threading import Thread
+from threading import Thread, RLock
 from tornado import gen
 from timeit import default_timer as timer
 import time
 
 
+#dictionary mapping user names to User objects
 users = {}
+#dictionary mapping User objects to their connections
 users_conn = {}
 rooms = {}
 room = Room(uuid.uuid4())
+#lock for the dictionary with user connections
+lock = RLock()
 
 p1input = 0.0
 p2input = 0.0
@@ -50,11 +54,15 @@ def createMsg(info):
 
 # broadcasts game information to players
 def broadcast(info):
-    for user, conn in users_conn.items():
-        try:
-            conn.write_message(info)
-        except Exception:
-            print("exception while broadcasting")
+    lock.acquire()
+    try:
+        for user, conn in users_conn.items():
+            try:
+                conn.write_message(info)
+            except Exception:
+                print("exception while broadcasting")
+    finally:
+        lock.release()
 
 # chekcs score and resets te ball if it chaged
 def checkScore():
@@ -133,7 +141,11 @@ class EchoWebSocket(tornado.websocket.WebSocketHandler):
     def on_close(self):
         name = self.get_cookie('name')
         room.removeUser(users[name])
-        del users_conn[users[name]]
+        lock.acquire()
+        try:
+            del users_conn[users[name]]
+        finally:
+            lock.release()
         del users[name]
         print("WebSocket closed " + name)
 

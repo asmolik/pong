@@ -4,9 +4,9 @@
 
 namespace PongGame
 {
-///
-/// A game command.
-///
+//
+// A game command.
+//
 class RangeCommand
 {
     float value;

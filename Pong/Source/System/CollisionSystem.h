@@ -9,9 +9,9 @@
 
 namespace PongGame
 {
-///
-/// Detects collisions, solves them and notifies objects about them.
-///
+//
+// Detects collisions, solves them and notifies objects about them.
+//
 class CollisionSystem
 {
     std::vector<std::shared_ptr<CollisionShape>> objects;

@@ -4,9 +4,9 @@
 
 namespace PongGame
 {
-///
-/// Information about a pong game.
-///
+//
+// Information about a pong game.
+//
 struct GameInfo
 {
     int player1Score;

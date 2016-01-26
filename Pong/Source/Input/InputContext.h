@@ -10,9 +10,9 @@
 
 namespace PongGame
 {
-///
-/// Provides a mapping of Inputs to Commands.
-///
+//
+// Provides a mapping of Inputs to Commands.
+//
 class InputContext
 {
 protected:
@@ -22,16 +22,16 @@ protected:
 public:
     InputContext();
     virtual ~InputContext();
-    ///
-    /// Maps inputs to game's commands. Can remove inputs from the vector
-    /// if they are not supposed to be used in other contexts.
-    ///
+    //
+    // Maps inputs to game's commands. Can remove inputs from the vector
+    // if they are not supposed to be used in other contexts.
+    //
     virtual std::vector<std::reference_wrapper<Command>> mapInput(
         std::vector<Input>& inputs);
-    ///
-    /// Maps ranges to game's commands. Can remove inputs from the vector
-    /// if they are not supposed to be used in other contexts.
-    ///
+    //
+    // Maps ranges to game's commands. Can remove inputs from the vector
+    // if they are not supposed to be used in other contexts.
+    //
     virtual std::vector<std::reference_wrapper<RangeCommand>> mapInput(
         std::vector<InputRange>& rangeInputs);
 

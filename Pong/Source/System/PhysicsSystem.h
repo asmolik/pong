@@ -6,9 +6,9 @@
 
 namespace PongGame
 {
-///
-/// Simulates game's physics. Integrates velocities and forces.
-///
+//
+// Simulates game's physics. Integrates velocities and forces.
+//
 class PhysicsSystem
 {
     std::vector<std::shared_ptr<PositionComponent>> objects;

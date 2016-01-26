@@ -1,16 +1,20 @@
 # pong
 
 ## Python
-ja mam 3.4.3, raczej nowszy nie zaszkodzi (boost xd)
-## tornado
+Testowane na wersji 3.4.3 (Windows) oraz 2.7 (Linux - Ubuntu)
+## Tornado
+Program wymaga biblioteki tornado:
 http://www.tornadoweb.org/en/stable/index.html
-## boost
-1. 1.55.0 (w nowszych coś nie działa)
-2. Chyba tylko to 5.2.1 trzeba zrobić http://www.boost.org/doc/libs/1_59_0/more/getting_started/windows.html#install-boost-build
+## Boost
+Na systemie Windows konieczne jest użycie wersji co najwyżej 1.55, ponieważ w nowszych wydaniach występują błędy podczas kompilacji biblioteki boost.python.
+Na systemie Ubuntu aplikacja pomyślnie się kompiluje z wykorzystaniem wersji 1.59.
+Aplikacja wykorzystuje system budowania boost build (b2, bjam). Aby kompilacja przebiegła pomyślnie należy w pliku Jamroot podać katalog zawierający bibliotekę boost. Dodatkowo podczas kompilacji na systemie Linux wymagane jest podanie parametru kompilacji -std==c++14. Zatem aby przeprowadzić na tym systemie kompilację należy wywołać komendę "b2 toolset=gcc cxxflags=-std=c++14".
 
-## pong
-1. cd Pong/
-2. b2
+## Kompilacja:
+1. W katalogu zawierającym źródła programu wywołanie programu "b2".
+2. Polecenie kompilacji
+  * Windows: b2
+  * Linux: b2 toolset=gcc cxxflags=-std=c++14
 3. cd Pong/bin
 4. python server.py
 5. localhost:8888

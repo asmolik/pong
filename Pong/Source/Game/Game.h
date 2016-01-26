@@ -17,9 +17,9 @@
 
 namespace PongGame
 {
-///
-/// A pong game.
-///
+//
+// A pong game.
+//
 class Game
 {
     std::unique_ptr<InputSystem> input;
